@@ -1,0 +1,53 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+.playwright-mcp/
+*.swp
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*credential*
+*credentials*
+*credention*
+*secret*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# LangChain / RAG sample runtime artifacts
+Ch02-RAG/chroma/
+docs/**/chroma/
+docs/**/.chroma/
+docs/**/vectorstore/
+docs/**/vectorstores/
+docs/**/storage/
+
+# Local logs and temporary files
+*.log
+*.tmp
+tmp/
+temp/

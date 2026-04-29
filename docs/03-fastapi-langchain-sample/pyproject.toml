@@ -1,0 +1,43 @@
+[project]
+name = "fastapi-langchain-sample"
+version = "0.2.0"
+description = "FastAPI + LangChain OpenAI 샘플 프로젝트"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "jinja2>=3.1.0",
+    "uvicorn[standard]>=0.32.0",
+    "langchain>=0.3.0",
+    "langchain-chroma>=0.1.4",
+    "langchain-classic>=1.0.0",
+    "langchain-community>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-text-splitters>=0.3.0",
+    "pydantic-settings>=2.0.0",
+    "docx2txt>=0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest-cov>=5.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest>=8.0.0",
+    "mypy>=1.13.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--cov=fastapi_langchain_sample --cov-report=term-missing --cov-fail-under=80"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fastapi_langchain_sample"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+ignore_missing_imports = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

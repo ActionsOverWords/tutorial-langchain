@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+  <title>소득세 RAG 챗봇</title>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <div>
+        <h1>소득세 RAG 챗봇</h1>
+        <p class="subtitle">소득세법 문서를 검색해 근거와 함께 답변합니다.</p>
+      </div>
+      <div class="status" id="status">인덱스 확인 중</div>
+    </header>
+
+    <div class="workspace">
+      <aside class="rail" aria-label="문서 상태 및 예시 질문">
+        <p class="rail-title">문서 상태</p>
+        <div class="metric">
+          <span>환경</span>
+          <strong id="environment">-</strong>
+        </div>
+        <div class="metric">
+          <span>Chroma 조각</span>
+          <strong id="indexedCount">-</strong>
+        </div>
+        <div class="metric">
+          <span>원본</span>
+          <strong>tax_with_markdown.docx</strong>
+        </div>
+
+        <div class="suggestions" aria-label="예시 질문">
+          <button class="chip" type="button">연봉 5천만원인 직장인 소득세는?</button>
+          <button class="chip" type="button">종합소득세 세율 구간을 알려줘</button>
+          <button class="chip" type="button">근로소득공제는 어떻게 계산해?</button>
+        </div>
+      </aside>
+
+      <section class="chat" aria-label="질문 답변">
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="empty" id="empty">질문을 입력하면 소득세법 문서에서 관련 조항을 찾아 답변합니다.</div>
+        </div>
+        <form id="form" class="composer">
+          <textarea id="message" required>연봉 5천만원인 직장인 소득세는?</textarea>
+          <button id="submit" type="submit">전송</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>

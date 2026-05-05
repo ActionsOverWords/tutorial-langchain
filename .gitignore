@@ -39,8 +39,7 @@ build/
 .ipynb_checkpoints/
 
 # LangChain / RAG sample runtime artifacts
-Ch02-RAG/chroma/
-docs/**/chroma/
+**/chroma/
 docs/**/.chroma/
 docs/**/vectorstore/
 docs/**/vectorstores/

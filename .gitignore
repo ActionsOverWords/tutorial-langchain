@@ -40,6 +40,15 @@ build/
 
 # LangChain / RAG sample runtime artifacts
 **/chroma/
+**/chroma_db/
+**/chroma_store/
+**/chroma_persist/
+**/chroma.sqlite3
+**/data_level0.bin
+**/header.bin
+**/length.bin
+**/link_lists.bin
+Ch03-LangGraph/estate_tax/
 docs/**/.chroma/
 docs/**/vectorstore/
 docs/**/vectorstores/

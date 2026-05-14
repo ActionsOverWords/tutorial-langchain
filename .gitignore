@@ -53,6 +53,7 @@ docs/**/.chroma/
 docs/**/vectorstore/
 docs/**/vectorstores/
 docs/**/storage/
+google/
 
 # Local logs and temporary files
 *.log
